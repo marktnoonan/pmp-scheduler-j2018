@@ -33,7 +33,24 @@
       "plugin:vue/essential",
       "@vue/prettier"
     ],
-    "rules": {},
+    "rules": {
+      "vue/attribute-hyphenation": [
+        "error",
+        "always"
+      ],
+      "vue/html-end-tags": "error",
+      "vue/html-indent": [
+        "error",
+        "tabs"
+      ],
+      "vue/html-self-closing": "error",
+      "vue/attributes-order": "error",
+      "vue/html-quotes": [
+        "error",
+        "double"
+      ],
+      "vue/order-in-components": "error"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
