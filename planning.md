@@ -18,45 +18,45 @@ When schedules are complete for a given period, the User can have them formatted
 
 ### CRUD for Underlying Data
 
-    - Add/Remove/Edit Individuals 
-        - Name
-        - UUID
-        - Default Schedules based on the type of day
-        - Appointments, Absences, Notes, etc.
+- Add/Remove/Edit Individuals 
+    - Name
+    - UUID
+    - Default Schedules based on the type of day
+    - Appointments, Absences, Notes, etc.
 
-    - Add/Remove/Edit Employees 
-        - Name
-        - UUID
-        - Default Schedules based on the type of day
-        - Email Addresses
-        - Permissions/Training/Rules - who they can work with, tasks they are allowed to do, who they are allowed to drive (if they are allowed to drive), whether they have/use their own car, etc.
+- Add/Remove/Edit Employees 
+    - Name
+    - UUID
+    - Default Schedules based on the type of day
+    - Email Addresses
+    - Permissions/Training/Rules - who they can work with, tasks they are allowed to do, who they are allowed to drive (if they are allowed to drive), whether they have/use their own car, etc.
 
-    - Add/Remove/Edit Managers
-        - Name
-        - UUID
-        - Default Schedules based on the type of day
-        - Email Addresses
-        - What Locations they manage?
+- Add/Remove/Edit Managers
+    - Name
+    - UUID
+    - Default Schedules based on the type of day
+    - Email Addresses
+    - What Locations they manage?
 
-    - Add/Remove/Edit Vehicles
-        - Vehicle Name
-        - Number of Seats
+- Add/Remove/Edit Vehicles
+    - Vehicle Name
+    - Number of Seats
 
-    - Add/Remove/Edit Locations
-        - Location Name
+- Add/Remove/Edit Locations
+    - Location Name
 
 ### Interacting with Schedules
 
-    - Generate a schedule for any given day.
-    - Add new changes in location, service, activity, etc, of any person or vehicle at any time chosen by User.
-    - Provide a warning if something appears to be impossible (e.g. Individual seems to be driving their own van?).
-    - Allow such warnings to be dismissed as "will fix later", dismissed with a note "will be brought in by helicopter', or dismissed with no explanation.
-    - Keep a list of warnings available but not in the way.
-    - Easily move groups of people around in the schedule.
+- Generate a schedule for any given day.
+- Add new changes in location, service, activity, etc, of any person or vehicle at any time chosen by User.
+- Provide a warning if something appears to be impossible (e.g. Individual seems to be driving their own van?).
+- Allow such warnings to be dismissed as "will fix later", dismissed with a note "will be brought in by helicopter', or dismissed with no explanation.
+- Keep a list of warnings available but not in the way.
+- Easily move groups of people around in the schedule.
 
 ### Interacting with Employees and Managers
     
-    - Allow schedule to be emailed to employee for a specified date range.
-    - All editing of email in browser before it is sent.
-    - Allow for updated schedules to be sent out to affected employees if changes are made.
+- Allow schedule to be emailed to employee for a specified date range.
+- All editing of email in browser before it is sent.
+- Allow for updated schedules to be sent out to affected employees if changes are made.
 
