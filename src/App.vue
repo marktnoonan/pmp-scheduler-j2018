@@ -71,12 +71,12 @@ export default {
           route: "/about"
         },
         {
-          icon: "help",
+          icon: "directions_car",
           title: "Vehicles",
           route: "/about"
         },
         {
-          icon: "directions_car",
+          icon: "place",
           title: "Locations",
           route: "/about"
         },

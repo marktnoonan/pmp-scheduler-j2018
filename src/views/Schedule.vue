@@ -4,14 +4,14 @@
       Schedule
     </h1>
     <v-layout row wrap>
-      <v-flex xs12 sm6 md4>
+      <v-flex xs12 sm6>
         <DatePicker label="Schedule Start Date" @update="updateStartDate"/>  
       </v-flex>
-      <v-flex>
-        <DatePicker :min="startDate" label="Schedule End Date" @update="updateEndDate"/>
+      <v-flex xs12 sm6>
+        <DatePicker :min="startDate" :max="twoWeeksFromStart" label="Schedule End Date" @update="updateEndDate"/>
       </v-flex>
     </v-layout>
-    <ScheduleAccordion />
+    <ScheduleAccordion :dates="daysInSchedule" />
   </v-layout>
 </template>
 
@@ -24,8 +24,36 @@ export default {
   data() {
     return {
       startDate: "",
-      endDate: ""
+      endDate: "",
+      today: new this.$moment().format("YYYY-MM-DD")
     };
+  },
+  computed: {
+    startMoment() {
+      if (this.startDate) {
+        return new this.$moment(this.startDate);
+      }
+    },
+    endMoment() {
+      if (this.endDate) {
+        return new this.$moment(this.endDate);
+      }
+    },
+    daysInSchedule() {
+      if (this.startMoment && this.endMoment) {
+        return this.fillInDays(this.startMoment, this.endMoment);
+      } else {
+        return [];
+      }
+    },
+    twoWeeksFromStart() {
+      if (this.startMoment) {
+        return this.startMoment
+          .clone()
+          .add(2, "weeks")
+          .format("YYYY-MM-DD");
+      }
+    }
   },
   methods: {
     updateStartDate(payload) {
@@ -33,6 +61,15 @@ export default {
     },
     updateEndDate(payload) {
       this.endDate = payload;
+    },
+    fillInDays(start, end) {
+      let days = [];
+      let firstMoment = start.clone();
+      let lastMoment = end;
+      do {
+        days.push(firstMoment.add(1, "days").format("YYYY-MM-DD"));
+      } while (firstMoment.isBefore(lastMoment));
+      return days;
     }
   }
 };

@@ -2,8 +2,6 @@
   <v-dialog
     ref="dialog"
     v-model="modal"
-    :return-value.sync="date"
-    persistent
     lazy
     full-width
     width="290px"
@@ -15,11 +13,7 @@
       prepend-icon="event"
       readonly
     />
-    <v-date-picker v-model="date" :min="min" scrollable>
-      <v-spacer/>
-      <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
-      <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
-    </v-date-picker>
+    <v-date-picker v-model="date" :min="min" :max="max" no-title scrollable first-day-of-week="1"/>
   </v-dialog>
 </template>
 
@@ -33,6 +27,9 @@ export default {
     min: {
       required: false,
       default: "2018-01-01"
+    },
+    max: {
+      required: false
     }
   },
   data() {
@@ -44,6 +41,7 @@ export default {
   watch: {
     date(val) {
       this.$emit("update", val);
+      this.modal = false;
     }
   }
 };
