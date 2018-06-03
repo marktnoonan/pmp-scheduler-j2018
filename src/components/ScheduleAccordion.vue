@@ -1,18 +1,23 @@
 <template>
   <v-expansion-panel focusable>
-    <v-expansion-panel-content v-for="(date,i) in dates" :key="i">
-      <div slot="header">{{date}}</div>
+    <v-expansion-panel-content v-for="date in dates" :key="date">
+      <h2 slot="header">{{formatDate(date)}}</h2>
       <v-card>
-        <v-card-text class="grey lighten-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
-        <v-card-text class="grey lighten-3">{{testword}}</v-card-text>
+        <v-card-text class="grey lighten-3"
+        >
+          <location-accordion />
+        </v-card-text>  
       </v-card>
     </v-expansion-panel-content>
   </v-expansion-panel>
 </template>
 
 <script>
+import LocationAccordion from "./LocationAccordion";
+
 export default {
   name: "ScheduleAccordion",
+  components: { LocationAccordion },
   props: {
     dates: {
       required: true
@@ -22,6 +27,11 @@ export default {
     return {
       testword: "test"
     };
+  },
+  methods: {
+    formatDate(date) {
+      return this.$moment(date).format("dddd MM/DD");
+    }
   }
 };
 </script>

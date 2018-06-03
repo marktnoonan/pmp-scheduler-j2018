@@ -63,8 +63,8 @@ export default {
       this.endDate = payload;
     },
     fillInDays(start, end) {
-      let days = [];
       let firstMoment = start.clone();
+      let days = [firstMoment.format("YYYY-MM-DD")];
       let lastMoment = end;
       do {
         days.push(firstMoment.add(1, "days").format("YYYY-MM-DD"));
