@@ -3,9 +3,9 @@
     <v-expansion-panel-content v-for="date in dates" :key="date">
       <h2 slot="header">{{formatDate(date)}}</h2>
       <v-card>
-        <v-card-text class="grey lighten-3"
+        <v-card-text class="grey lighten-3 pa-2"
         >
-          <timepoint-accordion :date="date" />
+          <timepoint-accordion :date="date" :times="times"/>
         </v-card-text>  
       </v-card>
     </v-expansion-panel-content>
@@ -26,7 +26,8 @@ export default {
   },
   data() {
     return {
-      testword: "test"
+      testword: "test",
+      times: ["00:00", "08:30", "09:00", "16:00", "17:00"]
     };
   },
   methods: {

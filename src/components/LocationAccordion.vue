@@ -1,8 +1,10 @@
 <template>
   <v-expansion-panel focusable expand>
-    <v-expansion-panel-content v-for="i in 10" :key="i" lazy>
-      <h2 slot="header">Location Name <span class="body-1">{{formatDate(date)}}</span></h2> 
+    <v-expansion-panel-content v-for="location in locations" :key="location" lazy>
+      <h4 slot="header">{{location}}</h4> 
+      
       <location-overview />
+      <span class="body-1 time-reminder">{{`${time} - ${formatDate(date)}`}}</span>
     </v-expansion-panel-content>
   </v-expansion-panel>
 </template>
@@ -13,7 +15,7 @@ import LocationOverview from "./LocationOverview";
 export default {
   name: "LocationAccordion",
   components: { LocationOverview },
-  props: ["date"],
+  props: ["date", "time", "locations"],
   data() {
     return {
       testword: "test"
@@ -28,4 +30,10 @@ export default {
 </script>
 
 <style scoped>
+.time-reminder {
+  color: grey;
+  display: block;
+  text-align: center;
+  padding: 1em;
+}
 </style>
