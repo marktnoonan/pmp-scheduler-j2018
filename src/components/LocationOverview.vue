@@ -1,27 +1,21 @@
 <template>
-  <v-container grid-list-md class="pt-0">
-    <v-layout row wrap>
-      <v-flex v-for="i in 4" :key="i" xs3>
-        <v-card color="purple lighten-3 ">
-          <v-card-title>Individuals</v-card-title>
-          <v-card-text class="grey lighten-2 pa-1">
-            <person-or-vehicle 
-              v-for="i in 3"
-              :key="i"
-              class="ma-1"
-            />
-          </v-card-text>
-        </v-card>
-      </v-flex>
-    </v-layout>
-    
-  </v-container>
+  <PersonOrVehicleList :people-and-vehicles="peopleAndVehicles"/>
 </template>
 
 <script>
-import PersonOrVehicle from "./PersonOrVehicle";
+import PersonOrVehicleList from "./PersonOrVehicleList";
 export default {
-  components: { PersonOrVehicle }
+  components: { PersonOrVehicleList },
+  data() {
+    return {
+      peopleAndVehicles: {
+        employees: [{ name: "Nerando" }, { name: "Xavier" }],
+        individuals: [{ name: "Kris" }, { name: "Faith" }, { name: "Rachel" }],
+        vehicles: [{ name: "Carlos's Car" }, { name: "Quentin's Car" }],
+        visitors: [{ name: "General Zod's Mother" }]
+      }
+    };
+  }
 };
 </script>
 

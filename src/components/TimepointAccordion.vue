@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panel expand focusable>
+  <v-expansion-panel expand focusable class="elevation-0">
     <v-flex class="ma-2 text-xs-right">
       <v-switch
         v-model="expandThisDay"

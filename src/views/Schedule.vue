@@ -3,7 +3,7 @@
     <h1>
       Schedule
     </h1>
-    <v-layout row wrap class="mb-3">
+    <v-layout row wrap class="mb-3" fluid>
       <v-flex xs12 sm5>
         <DatePicker label="Schedule Start Date" @update="updateStartDate"/>  
       </v-flex>
