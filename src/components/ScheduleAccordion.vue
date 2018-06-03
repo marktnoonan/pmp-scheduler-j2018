@@ -5,7 +5,7 @@
       <v-card>
         <v-card-text class="grey lighten-3"
         >
-          <location-accordion :date="date"/>
+          <timepoint-accordion :date="date" />
         </v-card-text>  
       </v-card>
     </v-expansion-panel-content>
@@ -14,10 +14,11 @@
 
 <script>
 import LocationAccordion from "./LocationAccordion";
+import TimepointAccordion from "./TimepointAccordion";
 
 export default {
   name: "ScheduleAccordion",
-  components: { LocationAccordion },
+  components: { LocationAccordion, TimepointAccordion },
   props: {
     dates: {
       required: true
