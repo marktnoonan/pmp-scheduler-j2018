@@ -5,7 +5,7 @@
       <v-card>
         <v-card-text class="grey lighten-3"
         >
-          <location-accordion />
+          <location-accordion :date="date"/>
         </v-card-text>  
       </v-card>
     </v-expansion-panel-content>
