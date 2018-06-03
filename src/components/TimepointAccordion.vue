@@ -1,11 +1,19 @@
 <template>
   <v-expansion-panel expand focusable>
-    <v-expansion-panel-content v-for="time in times" :key="date+time">
+    <v-flex class="ma-2 text-xs-right">
+      <v-switch
+        v-model="expandThisDay"
+        color="purple"
+        label="Expand All"
+        class="text-xs-right"
+      />
+    </v-flex>
+    <v-expansion-panel-content v-for="time in times" :key="date+time" :value="expandThisDay">
       <h3 slot="header">{{time}}</h3>
-      <v-card class="">
+      <v-card>
         <v-card-text class="grey lighten-3 pa-2"
         >
-          <location-accordion :date="date" :locations="locations" :time="time"/>
+          <location-accordion :date="date" :locations="locations" :time="time" :expand-this-day="expandThisDay"/>
         </v-card-text>  
       </v-card>
     </v-expansion-panel-content>
@@ -26,11 +34,15 @@ export default {
         "Stone Mountain",
         "The Varsity",
         "The Fox Theatre"
-      ]
+      ],
+      expandThisDay: false
     };
   }
 };
 </script>
 
 <style scoped>
+.switch {
+  display: block;
+}
 </style>

@@ -100,4 +100,7 @@ a {
   text-decoration: none;
   display: inline-flex;
 }
+div.input-group__details {
+  display: none;
+}
 </style>

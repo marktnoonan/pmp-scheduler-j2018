@@ -3,10 +3,11 @@
     :close-on-content-click="false"
     :nudge-width="200"
     v-model="menu"
+    class="ma-0"
     offset-overflow
     lazy
   >
-    <v-chip slot="activator" small class="pa-0 elevation-1" color="white">
+    <v-chip slot="activator" small class="pa-0 ma-0 elevation-1" color="white">
       Person's Name
     </v-chip>
     <v-card>

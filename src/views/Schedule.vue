@@ -3,15 +3,16 @@
     <h1>
       Schedule
     </h1>
-    <v-layout row wrap>
-      <v-flex xs12 sm6>
+    <v-layout row wrap class="mb-3">
+      <v-flex xs12 sm5>
         <DatePicker label="Schedule Start Date" @update="updateStartDate"/>  
       </v-flex>
-      <v-flex xs12 sm6>
+      <v-flex xs0 sm2/>
+      <v-flex xs12 sm5>
         <DatePicker :min="startDate" :max="twoWeeksFromStart" label="Schedule End Date" @update="updateEndDate"/>
       </v-flex>
     </v-layout>
-    <ScheduleAccordion :dates="daysInSchedule" />
+    <ScheduleAccordion :dates="daysInSchedule"/>
   </v-layout>
 </template>
 

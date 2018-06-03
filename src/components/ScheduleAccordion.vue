@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panel focusable>
+  <v-expansion-panel focusable expand >
     <v-expansion-panel-content v-for="date in dates" :key="date">
       <h2 slot="header">{{formatDate(date)}}</h2>
       <v-card>
