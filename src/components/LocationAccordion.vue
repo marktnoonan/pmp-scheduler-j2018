@@ -1,6 +1,6 @@
 <template>
   <v-expansion-panel focusable expand class="elevation-0">
-    <v-expansion-panel-content v-for="location in locations" :key="location" :value="expandThisDay" class="location-panel mb-2 elevation-1" lazy >
+    <v-expansion-panel-content v-for="location in locations" :key="location" :value="expandThisTime" class="location-panel mb-2 elevation-1" lazy >
       <!-- <span class="body-2 time-reminder">{{`${time} - ${formatDate(date)}`}}</span> -->
       <h4 slot="header" class="subheading subheading-location">{{location}}</h4> 
       <location-overview class="pt-2"/>
@@ -17,8 +17,20 @@ export default {
   props: ["date", "time", "locations", "expandThisDay"],
   data() {
     return {
-      testword: "test"
+      expandThisTime: false
     };
+  },
+  watch: {
+    expandThisDay() {
+      // this delay is just a away to avoid triggering a whole lot of renders at once...
+      // it generates a delay in ms based on the timepoint with a little multiplier to spread things out a little further.
+      // it's a little hacky but the performance feels much better.
+      const expandDelay = parseInt(this.time.split(":").join("")) * 1.2;
+      const vm = this;
+      setTimeout(function() {
+        vm.expandThisTime = !vm.expandThisTime;
+      }, expandDelay);
+    }
   },
   methods: {
     formatDate(date) {
