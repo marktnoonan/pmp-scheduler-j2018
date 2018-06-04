@@ -58,7 +58,7 @@ export default {
         {
           icon: "person",
           title: "Employees",
-          route: "/about"
+          route: "/employees"
         },
         {
           icon: "person",

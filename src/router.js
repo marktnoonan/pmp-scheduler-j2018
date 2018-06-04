@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import Schedule from "./views/Schedule";
+import Employees from "./views/Employees";
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: "/schedule",
       name: "schedule",
       component: Schedule
+    },
+    {
+      path: "/employees",
+      name: "employees",
+      component: Employees
     }
   ]
 });
