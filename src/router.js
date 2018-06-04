@@ -7,6 +7,7 @@ import Employees from "./views/Employees";
 import Managers from "./views/Managers";
 import Individuals from "./views/Individuals";
 import Vehicles from "./views/Vehicles";
+import Locations from "./views/Locations";
 
 Vue.use(Router);
 
@@ -46,6 +47,11 @@ export default new Router({
       path: "/vehicles",
       name: "vehicles",
       component: Vehicles
+    },
+    {
+      path: "/locations",
+      name: "locations",
+      component: Locations
     }
   ]
 });

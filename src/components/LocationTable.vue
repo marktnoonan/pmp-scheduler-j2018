@@ -8,9 +8,9 @@
     >
       <template slot="items" slot-scope="props">
         <td>{{props.item.name}}</td>
-        <td>{{props.item.home}}</td>
-        <td>{{props.item.seats}}</td>
-        <td>{{props.item.availability}}</td>
+        <td>{{props.item.manager}}</td>
+        <td>{{props.item.type}}</td>
+        <td>{{props.item.residents}}</td>
         <td class="justify-center layout px-0">
           <v-btn icon class="mx-0" @click="editItem(props.item)">
             <v-icon>edit</v-icon>
@@ -39,13 +39,13 @@
                 <v-text-field v-model="editedItem.name" label="Name"/>	
               </v-flex>	
               <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.home" label="Home"/>	
+                <v-text-field v-model="editedItem.manager" label="Manager"/>	
               </v-flex>	
               <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.seats" label="Seats"/>	
+                <v-text-field v-model="editedItem.type" label="Type"/>	
               </v-flex>	
               <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.availability" label="Availability"/>	
+                <v-text-field v-model="editedItem.residents" label="Residents"/>	
               </v-flex>	
             </v-layout>
           </v-container>
@@ -65,36 +65,36 @@ export default {
   data() {
     return {
       dialog: false,
-      formSubject: "Vehicle",
+      formSubject: "Location",
       editedIndex: -1,
       editedItem: {
         name: "",
-        home: "",
-        seats: "",
-        availability: ""
+        manager: "",
+        type: "",
+        residents: ""
       },
       employees: [],
       headers: [
         {
-          text: "Name",
+          text: "Location",
           align: "left",
           sortable: false,
           value: "name"
         },
         {
-          text: "Home",
+          text: "Manager",
           sortable: false,
-          value: "home"
+          value: "manager"
         },
         {
-          text: "Seats",
+          text: "Type",
           sortable: false,
-          value: "seats"
+          value: "type"
         },
         {
-          text: "Availability",
+          text: "Residents",
           sortable: false,
-          value: "availability"
+          value: "residents"
         }
       ]
     };
@@ -118,22 +118,22 @@ export default {
     initialize() {
       this.employees = [
         {
-          name: "The General",
-          seats: "5",
-          availability: "none",
-          home: "North Cress"
+          name: "North Cress",
+          manager: "Denise",
+          type: "CLS",
+          residents: "Some people"
         },
         {
-          name: "Star",
-          home: "Galen Goal",
-          seats: "8",
-          availability: "none"
+          name: "Galen Goal",
+          manager: "Mo",
+          type: "CAG",
+          residents: "Some other people"
         },
         {
-          name: "Belle",
-          home: "Roma Lye",
-          seats: "8",
-          availability: "none"
+          name: "Roma Lye",
+          manager: "Denise",
+          seats: "CLS",
+          residents: "Some other other people"
         }
       ];
     },

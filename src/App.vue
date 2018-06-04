@@ -78,7 +78,7 @@ export default {
         {
           icon: "place",
           title: "Locations",
-          route: "/about"
+          route: "/locations"
         },
         {
           icon: "help",
