@@ -118,14 +118,14 @@ export default {
     initialize() {
       this.employees = [
         {
-          name: "Nerando",
-          email: "Nerando@Nerando.Nerando",
+          name: "Denise",
+          email: "Denise@Denise.Denise",
           defaultSchedule: "none",
           availability: "none"
         },
         {
-          name: "Xavier",
-          email: "Xavier@Xavier.Xavier",
+          name: "Mo",
+          email: "Mo@Mo.Mo",
           defaultSchedule: "none",
           availability: "none"
         }

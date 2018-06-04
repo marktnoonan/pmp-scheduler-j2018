@@ -1,17 +1,17 @@
 <template>
   <v-layout column align-center ma-4>
     <h1>
-      Add/Remove/Edit Employees
+      Add/Remove/Edit Managers
     </h1>
-    <EmployeeTable />
+    <ManagerTable />
     
   </v-layout>
 </template>
 
 <script>
-import EmployeeTable from "../components/EmployeeTable";
+import ManagerTable from "../components/ManagerTable";
 export default {
-  components: { EmployeeTable }
+  components: { ManagerTable }
 };
 </script>
 
