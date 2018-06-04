@@ -6,6 +6,7 @@ import Schedule from "./views/Schedule";
 import Employees from "./views/Employees";
 import Managers from "./views/Managers";
 import Individuals from "./views/Individuals";
+import Vehicles from "./views/Vehicles";
 
 Vue.use(Router);
 
@@ -40,6 +41,11 @@ export default new Router({
       path: "/individuals",
       name: "indidviduals",
       component: Individuals
+    },
+    {
+      path: "/vehicles",
+      name: "vehicles",
+      component: Vehicles
     }
   ]
 });

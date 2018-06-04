@@ -73,7 +73,7 @@ export default {
         {
           icon: "directions_car",
           title: "Vehicles",
-          route: "/about"
+          route: "/vehicles"
         },
         {
           icon: "place",

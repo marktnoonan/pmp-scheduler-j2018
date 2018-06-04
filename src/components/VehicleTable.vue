@@ -9,7 +9,7 @@
       <template slot="items" slot-scope="props">
         <td>{{props.item.name}}</td>
         <td>{{props.item.home}}</td>
-        <td>{{props.item.defaultSchedule}}</td>
+        <td>{{props.item.seats}}</td>
         <td>{{props.item.availability}}</td>
         <td class="justify-center layout px-0">
           <v-btn icon class="mx-0" @click="editItem(props.item)">
@@ -42,7 +42,7 @@
                 <v-text-field v-model="editedItem.home" label="Home"/>	
               </v-flex>	
               <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.defaultSchedule" label="Default Schedule"/>	
+                <v-text-field v-model="editedItem.seats" label="Seats"/>	
               </v-flex>	
               <v-flex xs12 sm6 md4>
                 <v-text-field v-model="editedItem.availability" label="Availability"/>	
@@ -70,7 +70,7 @@ export default {
       editedItem: {
         name: "",
         home: "",
-        defaultSchedule: "",
+        seats: "",
         availability: ""
       },
       employees: [],
@@ -87,9 +87,9 @@ export default {
           value: "home"
         },
         {
-          text: "Default Schedule",
+          text: "Seats",
           sortable: false,
-          value: "defaultSchedule"
+          value: "seats"
         },
         {
           text: "Availability",
@@ -118,21 +118,21 @@ export default {
     initialize() {
       this.employees = [
         {
-          name: "Linda",
-          defaultSchedule: "none",
+          name: "The General",
+          seats: "5",
           availability: "none",
           home: "North Cress"
         },
         {
-          name: "Jessie",
+          name: "Star",
           home: "Galen Goal",
-          defaultSchedule: "none",
+          seats: "8",
           availability: "none"
         },
         {
-          name: "Mike",
-          home: "Galen Goal",
-          defaultSchedule: "none",
+          name: "Belle",
+          home: "Roma Lye",
+          seats: "8",
           availability: "none"
         }
       ];
