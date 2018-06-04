@@ -1,7 +1,7 @@
 <template>
   <v-layout column align-center ma-4>
     <h1>
-      Add/Remove/Edit Vehicles
+      Add/Remove/Edit Locations
     </h1>
     <LocationTable />
     
