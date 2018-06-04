@@ -61,12 +61,12 @@ export default {
           route: "/employees"
         },
         {
-          icon: "person",
+          icon: "account_circle",
           title: "Individuals",
-          route: "/about"
+          route: "/individuals"
         },
         {
-          icon: "person",
+          icon: "supervisor_account",
           title: "Managers",
           route: "/managers"
         },

@@ -8,7 +8,7 @@
     >
       <template slot="items" slot-scope="props">
         <td>{{props.item.name}}</td>
-        <td>{{props.item.email}}</td>
+        <td>{{props.item.home}}</td>
         <td>{{props.item.defaultSchedule}}</td>
         <td>{{props.item.availability}}</td>
         <td class="justify-center layout px-0">
@@ -39,7 +39,7 @@
                 <v-text-field v-model="editedItem.name" label="Name"/>	
               </v-flex>	
               <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.email" label="Email"/>	
+                <v-text-field v-model="editedItem.home" label="Email"/>	
               </v-flex>	
               <v-flex xs12 sm6 md4>
                 <v-text-field v-model="editedItem.defaultSchedule" label="Default Schedule"/>	
@@ -65,11 +65,11 @@ export default {
   data() {
     return {
       dialog: false,
-      formSubject: "Manager",
+      formSubject: "Individual",
       editedIndex: -1,
       editedItem: {
         name: "",
-        email: "",
+        home: "",
         defaultSchedule: "",
         availability: ""
       },
@@ -82,9 +82,9 @@ export default {
           value: "name"
         },
         {
-          text: "Email Address",
+          text: "Home",
           sortable: false,
-          value: "email"
+          value: "home"
         },
         {
           text: "Default Schedule",
@@ -118,14 +118,20 @@ export default {
     initialize() {
       this.employees = [
         {
-          name: "Denise",
-          email: "Denise@Denise.Denise",
+          name: "Linda",
+          defaultSchedule: "none",
+          availability: "none",
+          home: "North Cress"
+        },
+        {
+          name: "Jessie",
+          home: "Galen Goal",
           defaultSchedule: "none",
           availability: "none"
         },
         {
-          name: "Mo",
-          email: "Mo@Mo.Mo",
+          name: "Mike",
+          home: "Galen Goal",
           defaultSchedule: "none",
           availability: "none"
         }

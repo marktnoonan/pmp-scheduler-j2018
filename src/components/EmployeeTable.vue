@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       dialog: false,
-      formSubject: "Employees",
+      formSubject: "Employee",
       editedIndex: -1,
       editedItem: {
         name: "",
