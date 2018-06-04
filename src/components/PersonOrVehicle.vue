@@ -7,7 +7,7 @@
     offset-overflow
     lazy
   >
-    <v-chip slot="activator" small class="pa-0 ma-0 elevation-1" color="white">
+    <v-chip slot="activator" close small class="pa-0 ma-0 elevation-1" color="white">
       <slot/>
     </v-chip>
     <v-card>

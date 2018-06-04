@@ -1,9 +1,9 @@
 <template>
   <v-expansion-panel focusable expand class="elevation-0">
     <v-expansion-panel-content v-for="location in locations" :key="location" :value="expandThisDay" class="location-panel mb-2 elevation-1" lazy >
-      <span class="body-2 time-reminder">{{`${time} - ${formatDate(date)}`}}</span>
+      <!-- <span class="body-2 time-reminder">{{`${time} - ${formatDate(date)}`}}</span> -->
       <h4 slot="header" class="subheading subheading-location">{{location}}</h4> 
-      <location-overview/>
+      <location-overview class="pt-2"/>
     </v-expansion-panel-content>
   </v-expansion-panel>
 </template>
