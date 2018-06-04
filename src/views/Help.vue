@@ -1,10 +1,11 @@
 <template>
   <v-layout column align-center ma-4>
     <h1>
-      Add/Remove/Edit Vehicles
+      Help
     </h1>
-    <LocationTable />
-    
+    <p>
+      Here's how to do some things.
+    </p>
   </v-layout>
 </template>
 

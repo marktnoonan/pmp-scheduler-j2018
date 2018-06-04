@@ -83,13 +83,13 @@ export default {
         {
           icon: "help",
           title: "Help",
-          route: "/about"
+          route: "/help"
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: "Vuetify.js"
+      title: "PMP Schedule"
     };
   }
 };

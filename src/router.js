@@ -8,6 +8,7 @@ import Managers from "./views/Managers";
 import Individuals from "./views/Individuals";
 import Vehicles from "./views/Vehicles";
 import Locations from "./views/Locations";
+import Help from "./views/Help";
 
 Vue.use(Router);
 
@@ -52,6 +53,11 @@ export default new Router({
       path: "/locations",
       name: "locations",
       component: Locations
+    },
+    {
+      path: "/help",
+      name: "help",
+      component: Help
     }
   ]
 });
