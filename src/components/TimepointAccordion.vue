@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panel expand focusable class="elevation-0">
+  <v-expansion-panel expand focusable class="elevation-0 pa-0">
     <v-flex class="ma-2 text-xs-right">
       <v-switch
         v-model="expandThisDay"
@@ -8,10 +8,10 @@
         class="text-xs-right"
       />
     </v-flex>
-    <v-expansion-panel-content v-for="time in times" :key="date+time" :value="expandThisDay">
+    <v-expansion-panel-content v-for="time in times" :key="date+time" :value="expandThisDay" class="pa-0">
       <h3 slot="header">{{time}}</h3>
       <v-card>
-        <v-card-text class="grey lighten-3 pa-2"
+        <v-card-text class="pa-2"
         >
           <location-accordion :date="date" :locations="locations" :time="time" :expand-this-day="expandThisDay"/>
         </v-card-text>  

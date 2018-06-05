@@ -3,7 +3,7 @@
     <v-expansion-panel-content v-for="date in dates" :key="date">
       <h2 slot="header">{{formatDate(date)}}</h2>
       <v-card>
-        <v-card-text class="grey lighten-3 pa-2"
+        <v-card-text class="grey lighten-3 pa-0"
         >
           <timepoint-accordion :date="date" :times="times"/>
         </v-card-text>  
