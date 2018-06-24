@@ -8,7 +8,7 @@
       lazy 
     >
       <!-- <span class="body-2 time-reminder">{{`${time} - ${formatDate(date)}`}}</span> -->
-      <h4 slot="header" class="subheading subheading-location">{{location}}</h4> 
+      <h4 slot="header" class="subheading subheading-location"><v-icon>location_on</v-icon> <span>{{location}}</span></h4> 
       <location-overview class="pt-2"/>
     </v-expansion-panel-content>
   </v-expansion-panel>
@@ -32,7 +32,7 @@ export default {
       // it generates a delay in ms based on the timepoint with a little multiplier to spread things out a little further.
       // it's a little hacky but the performance feels much better.
       if (this.expandThisDay) {
-        const expandDelay = parseInt(this.time.split(":").join("")) * 1.2;
+        const expandDelay = parseInt(this.time.split(":").join("")) * 1.4;
         const vm = this;
         setTimeout(function() {
           vm.expandThisTime = true;
@@ -60,5 +60,13 @@ export default {
   height: 0px;
   overflow: initial;
   pointer-events: none;
+}
+
+h4 > span {
+  padding-left: 1ex;
+}
+
+.icon {
+  vertical-align: bottom;
 }
 </style>

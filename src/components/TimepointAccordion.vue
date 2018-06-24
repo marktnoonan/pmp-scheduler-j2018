@@ -8,8 +8,8 @@
         class="text-xs-right"
       />
     </v-flex>
-    <v-expansion-panel-content v-for="time in times" :key="date+time" :value="expandThisDay" class="pa-0">
-      <h3 slot="header">{{time}}</h3>
+    <v-expansion-panel-content v-for="time in times" :key="date+time" :value="expandThisDay">
+      <h3 slot="header"><v-icon>access_time</v-icon><span>{{time}}</span></h3>
       <v-card>
         <v-card-text class="pa-2"
         >
@@ -22,19 +22,14 @@
 
 <script>
 import LocationAccordion from "./LocationAccordion";
+import dummyData from "../dummy-data/dummy";
 
 export default {
   components: { LocationAccordion },
   props: ["date", "times"],
   data() {
     return {
-      locations: [
-        "Atlanta Zoo",
-        "World Of Coke",
-        "Stone Mountain",
-        "The Varsity",
-        "The Fox Theatre"
-      ],
+      locations: dummyData.locations,
       expandThisDay: false
     };
   }
@@ -44,5 +39,14 @@ export default {
 <style scoped>
 .switch {
   display: block;
+}
+
+h3 > span {
+  padding-left: 1ex;
+  display: inline-block;
+}
+
+.icon {
+  vertical-align: bottom;
 }
 </style>

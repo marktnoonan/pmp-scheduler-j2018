@@ -1,7 +1,7 @@
 <template>
-  <v-expansion-panel focusable expand class="elevation-0">
+  <v-expansion-panel focusable expand class="elevation-0 main-expansion-panel">
     <v-expansion-panel-content v-for="date in dates" :key="date">
-      <h2 slot="header">{{formatDate(date)}}</h2>
+      <h2 slot="header"><v-icon>calendar_today</v-icon><span>{{formatDate(date)}}</span> </h2>
       <v-card>
         <v-card-text class="grey lighten-3 pa-0"
         >
@@ -39,4 +39,14 @@ export default {
 </script>
 
 <style scoped>
+.main-expansion-panel {
+  max-width: 900px;
+}
+
+h2 > span {
+  padding-left: 1ex;
+}
+.icon {
+  padding-bottom: 0.2em;
+}
 </style>
