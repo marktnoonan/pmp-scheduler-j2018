@@ -7,10 +7,12 @@
       class="elevation-1"
     >
       <template slot="items" slot-scope="props">
+        <td>{{props.item.uid}}</td>
         <td>{{props.item.name}}</td>
         <td>{{props.item.email}}</td>
         <td>{{props.item.defaultSchedule}}</td>
         <td>{{props.item.availability}}</td>
+        <td>{{props.item.drivesForPmp ? "yes" : "no"}}</td>
         <td class="justify-center layout px-0">
           <v-btn icon class="mx-0" @click="editItem(props.item)">
             <v-icon>edit</v-icon>
@@ -30,25 +32,14 @@
       </v-btn>
       <v-card>
         <v-card-title>
-          <span class="headline">{{formTitle}}</span>
+          <span class="headline">{{formTitle}} {{editedItem.uid ? `(ID: ${editedItem.uid})` : ""}}</span>
         </v-card-title>
         <v-card-text>
-          <v-container grid-list-md>
-            <v-layout wrap>
-              <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.name" label="Name"/>	
-              </v-flex>	
-              <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.email" label="Email"/>	
-              </v-flex>	
-              <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.defaultSchedule" label="Default Schedule"/>	
-              </v-flex>	
-              <v-flex xs12 sm6 md4>
-                <v-text-field v-model="editedItem.availability" label="Availability"/>	
-              </v-flex>	
-            </v-layout>
-          </v-container>
+          <v-text-field v-model="editedItem.name" label="Name"/>	
+          <v-text-field v-model="editedItem.email" label="Email"/>	
+          <v-text-field v-model="editedItem.defaultSchedule" label="Default Schedule"/>	
+          <v-text-field v-model="editedItem.availability" label="Availability"/>
+          <v-checkbox v-model="editedItem.drivesForPmp" label="Drives for PMP"/>	
         </v-card-text>
         <v-card-actions>
           <v-spacer/>
@@ -61,6 +52,7 @@
 </template>
 
 <script>
+import dummyData from "../dummy-data/dummy";
 export default {
   data() {
     return {
@@ -71,10 +63,17 @@ export default {
         name: "",
         email: "",
         defaultSchedule: "",
-        availability: ""
+        availability: "",
+        drivesForPmp: false
       },
       employees: [],
       headers: [
+        {
+          text: "ID",
+          align: "left",
+          sortable: false,
+          value: "uid"
+        },
         {
           text: "Name",
           align: "left",
@@ -95,6 +94,11 @@ export default {
           text: "Availability",
           sortable: false,
           value: "availability"
+        },
+        {
+          text: "Drives for PMP",
+          sortable: false,
+          value: "drivesForPmp"
         }
       ]
     };
@@ -116,20 +120,7 @@ export default {
   },
   methods: {
     initialize() {
-      this.employees = [
-        {
-          name: "Nerando",
-          email: "Nerando@Nerando.Nerando",
-          defaultSchedule: "none",
-          availability: "none"
-        },
-        {
-          name: "Xavier",
-          email: "Xavier@Xavier.Xavier",
-          defaultSchedule: "none",
-          availability: "none"
-        }
-      ];
+      this.employees = dummyData.realisticEmployees;
     },
     close() {
       this.dialog = false;
@@ -142,6 +133,7 @@ export default {
       if (this.editedIndex > -1) {
         Object.assign(this.employees[this.editedIndex], this.editedItem);
       } else {
+        this.editedItem.uid = "999";
         this.employees.push(this.editedItem);
       }
       this.close();

@@ -8,7 +8,9 @@
             <person-or-vehicle 
               v-for="(personOrVehicle, i) in category"
               :key="i"
-              class="ma-1"  
+              :name="personOrVehicle.name"
+              :location="location"
+              class="ma-1"
             >{{personOrVehicle.name}}</person-or-vehicle>
           </v-card-text>
         </v-card>
@@ -22,7 +24,7 @@ import PersonOrVehicle from "./PersonOrVehicle";
 
 export default {
   components: { PersonOrVehicle },
-  props: ["peopleAndVehicles"],
+  props: ["peopleAndVehicles", "location"],
   methods: {
     capitalizeFirstLetter(word) {
       return (

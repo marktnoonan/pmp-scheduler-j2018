@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panel focusable expand class="elevation-0">
+  <v-expansion-panel focusable expand class="elevation-0 pa-0 ma-0">
     <v-expansion-panel-content 
       v-for="location in locations" 
       :key="location" 
@@ -9,7 +9,7 @@
     >
       <!-- <span class="body-2 time-reminder">{{`${time} - ${formatDate(date)}`}}</span> -->
       <h4 slot="header" class="subheading subheading-location"><v-icon>location_on</v-icon> <span>{{location}}</span></h4> 
-      <location-overview class="pt-2"/>
+      <location-overview :location="location" class="pa-1 white"/>
     </v-expansion-panel-content>
   </v-expansion-panel>
 </template>

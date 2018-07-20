@@ -11,20 +11,13 @@
       <slot/>
     </v-chip>
     <v-card>
-      <v-list>
-        <v-list-tile>
-          <v-list-tile-action>
-            <v-switch v-model="message" color="purple"/>
-          </v-list-tile-action>
-          <v-list-tile-title>Enable messages</v-list-tile-title>
-        </v-list-tile>
-        <v-list-tile>
-          <v-list-tile-action>
-            <v-switch v-model="hints" color="purple"/>
-          </v-list-tile-action>
-          <v-list-tile-title>Enable hints</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
+      <v-card-text class="mt-0 pt-4">
+        Move <b>{{name}}</b> from <b>{{location}}</b> to:
+        <v-select
+          :items="locations"
+          label="Location"
+        />
+      </v-card-text>
       <v-card-actions>
         <v-spacer/>
         <v-btn flat @click="menu = false">Cancel</v-btn>
@@ -35,12 +28,15 @@
 </template>
 
 <script>
+import dummyData from "../dummy-data/dummy";
 export default {
+  props: ["name", "location"],
   data() {
     return {
       menu: false,
       message: false,
-      hints: true
+      hints: true,
+      locations: dummyData.locations
     };
   }
 };
