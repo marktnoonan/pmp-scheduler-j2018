@@ -23,7 +23,7 @@
     >
       <v-card>
         <v-card-title>
-          <h2>Make Changes</h2>
+          <h2>Make Changes on {{formatDate(date)}}</h2>
         </v-card-title>
         <v-card-text>
 
@@ -86,7 +86,11 @@ export default {
       makeChangeDialog: false
     };
   },
-  methods: {}
+  methods: {
+    formatDate(date) {
+      return this.$moment(date).format("dddd MM/DD");
+    }
+  }
 };
 </script>
 

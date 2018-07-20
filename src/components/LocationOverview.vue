@@ -1,22 +1,44 @@
 <template>
-  <PersonOrVehicleList :location="location" :people-and-vehicles="peopleAndVehicles"/>
+  <PersonOrVehicleList :location="location" :people-and-vehicles="peopleAndVehicles" :time="time">
+    <v-card-text>
+      {{location}} contains no people or vehicles at {{time}}.
+    </v-card-text>
+  </PersonOrVehicleList>
 </template>
 
 <script>
 import PersonOrVehicleList from "./PersonOrVehicleList";
-import dummyData from "../dummy-data/dummy";
 export default {
   components: { PersonOrVehicleList },
-  props: ["location"],
+  props: ["location", "time"],
   data() {
-    return {
-      peopleAndVehicles: {
-        employees: [{ name: "Nerando" }, { name: "Xavier" }],
-        individuals: [{ name: "Kris" }, { name: "Faith" }, { name: "Rachel" }],
-        vehicles: dummyData.realisticVehicles,
-        visitors: [{ name: "General Zod's Mother" }]
+    return {};
+  },
+  computed: {
+    peopleAndVehicles() {
+      if (
+        this.$store.state.demoTimempointsForADay[this.time] &&
+        this.$store.state.demoTimempointsForADay[this.time].newLocations[
+          this.location.toLowerCase()
+        ]
+      ) {
+        return {
+          employees:
+            this.$store.state.demoTimempointsForADay[this.time].newLocations[
+              this.location.toLowerCase()
+            ].employees || [],
+          individuals:
+            this.$store.state.demoTimempointsForADay[this.time].newLocations[
+              this.location.toLowerCase()
+            ].individuals || [],
+          vehicles:
+            this.$store.state.demoTimempointsForADay[this.time].newLocations[
+              this.location.toLowerCase()
+            ].vehicles || [],
+          visitors: [{ name: "General Zod's Mother" }]
+        };
       }
-    };
+    }
   }
 };
 </script>

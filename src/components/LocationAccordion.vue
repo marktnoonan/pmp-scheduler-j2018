@@ -9,7 +9,7 @@
     >
       <!-- <span class="body-2 time-reminder">{{`${time} - ${formatDate(date)}`}}</span> -->
       <h4 slot="header" class="subheading subheading-location"><v-icon>location_on</v-icon> <span>{{location}}</span></h4> 
-      <location-overview :location="location" class="pa-1 white"/>
+      <location-overview :location="location" :time="time" class="pa-1 white"/>
     </v-expansion-panel-content>
   </v-expansion-panel>
 </template>

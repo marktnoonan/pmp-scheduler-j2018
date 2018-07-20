@@ -1,5 +1,6 @@
 <template>
   <v-container grid-list-md fluid class="pa-0">
+    <slot v-if="!peopleAndVehicles"/>
     <v-layout row wrap>
       <v-flex v-for="(category, key) in peopleAndVehicles" :key="key" xs12 sm6 md3>
         <v-card color="purple lighten-5">
@@ -10,6 +11,7 @@
               :key="i"
               :name="personOrVehicle.name"
               :location="location"
+              :time="time"
               class="ma-1"
             >{{personOrVehicle.name}}</person-or-vehicle>
           </v-card-text>
@@ -24,7 +26,7 @@ import PersonOrVehicle from "./PersonOrVehicle";
 
 export default {
   components: { PersonOrVehicle },
-  props: ["peopleAndVehicles", "location"],
+  props: ["peopleAndVehicles", "location", "time"],
   methods: {
     capitalizeFirstLetter(word) {
       return (

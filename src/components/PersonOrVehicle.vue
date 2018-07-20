@@ -11,7 +11,8 @@
       <slot/>
     </v-chip>
     <v-card>
-      <v-card-text class="mt-0 pt-4">
+      <v-card-title class="pa-2 deep-purple lighten-5"><v-spacer/><h3>Make Change at {{time}}</h3><v-spacer/></v-card-title>
+      <v-card-text class="mt-0">
         Move <b>{{name}}</b> from <b>{{location}}</b> to:
         <v-select
           :items="locations"
@@ -30,7 +31,7 @@
 <script>
 import dummyData from "../dummy-data/dummy";
 export default {
-  props: ["name", "location"],
+  props: ["name", "location", "time"],
   data() {
     return {
       menu: false,

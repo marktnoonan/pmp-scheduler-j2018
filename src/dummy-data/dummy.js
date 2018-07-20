@@ -100,6 +100,68 @@ export default {
       uid: 12
     }
   ],
+  realisticIndividuals: [
+    {
+      name: "Kris",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 13
+    },
+    {
+      name: "Faith",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 14
+    },
+    {
+      name: "Rachel",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 15
+    },
+    {
+      name: "General Zod",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 16
+    },
+    {
+      name: "Maryellen",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 17
+    },
+    {
+      name: "Maryellen",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 18
+    },
+    {
+      name: "Stella",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 19
+    },
+    {
+      name: "Flora",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 20
+    },
+    {
+      name: "Lefty",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 21
+    },
+    {
+      name: "Bob",
+      serivces: ["CLS", "CAG"],
+      home: "North Cress",
+      uid: 22
+    }
+  ],
   individuals: [
     "Kris",
     "Faith",
